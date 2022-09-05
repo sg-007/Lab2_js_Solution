@@ -8,7 +8,7 @@ Quiz.prototype.getQuesByInd = function() {
     return this.questions[this.questionIndex];
 }
 
-Quiz.prototype.checkAns = function() {
+Quiz.prototype.checkAns = function(answer) {
     if (this.getQuesByInd().CorrectAns(answer)) {
         this.score++;
     }
@@ -58,7 +58,7 @@ function handleOptionButton(id, choice) {
 function showProgress() {
     var curQnum = quiz.questionIndex + 1;
     var element = document.getElementById("progress");
-    element.innerHtml = "Question" + curQnum + "of" + quiz.questions.length;
+    element.innerHtml = "Question " + curQnum + " of" + quiz.questions.length;
 }
 
 function showScores() {
@@ -69,11 +69,11 @@ function showScores() {
 }
 
 var questions = [
-    new Question("What of the following is the default value of an instance variable? ", ["null", "0", "Depends upon type of variable", "Not assigned"], "Depends upon type of variable"),
-    new Question("Which of those allows duplicate elements? ", ["Set", "List", "All", "NOTA"], "List"),
-    new Question("Which is used to connect to Database? ", ["php", "html", "js", "all"], "php"),
+    new Question("What of the following is the default value of an instance variable ? ", ["null", "0", "Depends upon type of variable", "Not assigned"], "Depends upon type of variable"),
+    new Question("Which of those allows duplicate elements ? ", ["Set", "List", "All", "NOTA"], "List"),
+    new Question("Which is used to connect to Database ? ", ["php", "html", "js", "all"], "php"),
     new Question("Which of these is a bird ?", ["cat", "dog", "parrot", "cow"], "parrot"),
-    new Question("Which is the biggest continent in the world? ", ["Asia", "Australia", "Europe", "North America"], "Asia"),
+    new Question("Which is the biggest continent in the world ? ", ["Asia", "Australia", "Europe", "North America"], "Asia"),
 ]
 
 var quiz = new Quiz(questions);
