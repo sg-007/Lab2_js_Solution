@@ -31,7 +31,7 @@ Question.prototype.CorrectAns = function(choice) {
 
 function loadQuestions() {
     if (quiz.isEnded()) {
-        showScores; 
+        showScores(); 
     }
     else {
         var element = document.getElementById("question");
@@ -43,9 +43,8 @@ function loadQuestions() {
             element.innerHtml = choices[i];
             handleOptionButton("btn" + i, choices[i]);
         }
+        showProgress();
     }
-
-    showProgress();
 }
 
 function handleOptionButton(id, choice) {
@@ -65,6 +64,7 @@ function showProgress() {
 function showScores() {
     var gameOver = "<h1>Result</h1>";
     gameOver += "<h2 id = 'score'> Your score: " + quiz.score + ". Your percentage is: " + (quiz.score/questions.length * 100) + "%" + "</h2>";
+    var element = document.getElementById("quiz");
     element.innerHtml = gameOver;
 }
 
