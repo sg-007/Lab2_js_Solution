@@ -64,7 +64,7 @@ function showProgress() {
 
 function showScores() {
     var gameOver = "<h1>Result</h1>";
-    gameOver += "h2 id = 'score'> Your score: " + quiz.score + ". Your percentage is: " + (quiz.score/questions.length * 100) + "%" + "</h2>";
+    gameOver += "<h2 id = 'score'> Your score: " + quiz.score + ". Your percentage is: " + (quiz.score/questions.length * 100) + "%" + "</h2>";
     element.innerHtml = gameOver;
 }
 
