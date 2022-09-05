@@ -8,7 +8,7 @@ Quiz.prototype.getQuesByInd = function() {
     return this.questions[this.questionIndex];
 }
 
-Quiz.prototype.checkAns = function(answer) {
+Quiz.prototype.checkOpAns = function(answer) {
     if (this.getQuesByInd().CorrectAns(answer)) {
         this.score++;
     }
