@@ -78,4 +78,4 @@ var questions = [
 
 var quiz = new Quiz(questions);
 
-loadQuestions;
+loadQuestions();
