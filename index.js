@@ -35,12 +35,12 @@ function loadQuestions() {
     }
     else {
         var element = document.getElementById("question");
-        element.innerHtml = quiz.getQuesByInd().text;
+        element.innerHTML = quiz.getQuesByInd().text;
 
         var choices = quiz.getQuesByInd().choices;
         for (var i = 0; i < choices.length; i++) {
             var element = document.getElementById("choice" + i);
-            element.innerHtml = choices[i];
+            element.innerHTML = choices[i];
             handleOptionButton("btn" + i, choices[i]);
         }
         showProgress();
@@ -58,14 +58,14 @@ function handleOptionButton(id, choice) {
 function showProgress() {
     var curQnum = quiz.questionIndex + 1;
     var element = document.getElementById("progress");
-    element.innerHtml = "Question " + curQnum + " of" + quiz.questions.length;
+    element.innerHTML = "Question " + curQnum + " of " + quiz.questions.length;
 }
 
 function showScores() {
     var gameOver = "<h1>Result</h1>";
     gameOver += "<h2 id = 'score'> Your score: " + quiz.score + ". Your percentage is: " + (quiz.score/questions.length * 100) + "%" + "</h2>";
     var element = document.getElementById("quiz");
-    element.innerHtml = gameOver;
+    element.innerHTML = gameOver;
 }
 
 var questions = [
